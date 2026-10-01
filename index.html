@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cửa hàng sách trực tuyến BookNest">
+    <title>BookNest | Sách hay mỗi ngày</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="BookNest trang chủ">
+            <span class="brand-mark">BN</span>
+            <span>BookNest</span>
+        </a>
+        <nav class="main-nav" aria-label="Điều hướng chính">
+            <a class="active" href="#top">Trang chủ</a>
+            <a href="#books">Sách</a>
+            <a href="#categories">Thể loại</a>
+        </nav>
+        <button class="cart-button" id="cartButton" type="button" aria-label="Mở giỏ hàng">
+            Giỏ hàng <span id="cartCount">0</span>
+        </button>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Góc đọc chọn lọc</p>
+                <h1>Một cuốn sách hay, một ngày đáng nhớ.</h1>
+                <p class="hero-text">Khám phá những tựa sách được chọn kỹ cho những giờ đọc thật trọn vẹn.</p>
+                <a class="primary-button" href="#books">Khám phá sách</a>
+            </div>
+            <div class="hero-stack" aria-label="Những cuốn sách nổi bật">
+                <div class="hero-book book-blue">THE<br>LONG<br>WAY</div>
+                <div class="hero-book book-red">MỘT<br>ĐỜI<br>ĐÁNG SỐNG</div>
+                <div class="hero-book book-gold">READ<br>MORE</div>
+            </div>
+        </section>
+
+        <section class="section" id="books">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Bộ sưu tập hôm nay</p>
+                    <h2>Sách được yêu thích</h2>
+                </div>
+                <div class="toolbar">
+                    <label class="search-box">
+                        <span>Tìm sách</span>
+                        <input id="searchInput" type="search" placeholder="Tên sách hoặc tác giả">
+                    </label>
+                    <select id="categoryFilter" aria-label="Lọc theo thể loại">
+                        <option value="all">Tất cả thể loại</option>
+                        <option value="van-hoc">Văn học</option>
+                        <option value="ky-nang">Kỹ năng sống</option>
+                        <option value="kinh-te">Kinh tế</option>
+                    </select>
+                </div>
+            </div>
+            <div class="book-grid" id="bookGrid"></div>
+            <p class="empty-state" id="emptyState" hidden>Không tìm thấy cuốn sách phù hợp.</p>
+        </section>
+
+        <section class="category-band" id="categories">
+            <div><p class="eyebrow">Đọc theo tâm trạng</p><h2>Tìm đúng câu chuyện của bạn</h2></div>
+            <div class="category-list">
+                <button data-category="van-hoc" type="button">Văn học <span>→</span></button>
+                <button data-category="ky-nang" type="button">Kỹ năng sống <span>→</span></button>
+                <button data-category="kinh-te" type="button">Kinh tế <span>→</span></button>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Giỏ hàng" aria-hidden="true">
+        <div class="cart-header"><h2>Giỏ hàng</h2><button id="closeCart" type="button" aria-label="Đóng giỏ hàng">×</button></div>
+        <div id="cartItems"><p class="cart-empty">Giỏ hàng đang trống.</p></div>
+        <div class="cart-footer"><div><span>Tạm tính</span><strong id="cartTotal">0 đ</strong></div><button class="primary-button" id="checkoutButton" type="button" disabled>Thanh toán</button></div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+    <dialog class="payment-dialog" id="paymentDialog" aria-labelledby="paymentTitle">
+        <div class="payment-header">
+            <h2 id="paymentTitle">Thông tin thanh toán</h2>
+            <button id="closePayment" type="button" aria-label="Đóng thông tin thanh toán">×</button>
+        </div>
+        <p class="payment-total"><span>Số tiền cần chuyển</span><strong id="paymentTotal">0 đ</strong></p>
+        <dl class="payment-details">
+            <div><dt>Ngân hàng</dt><dd>Techcombank</dd></div>
+            <div><dt>Số tài khoản</dt><dd>88803122007888</dd></div>
+        </dl>
+        <p class="payment-note">Vui lòng chuyển khoản đúng số tiền hiển thị.</p>
+    </dialog>
+    <footer><p>BookNest</p><span>Những trang sách mở ra những thế giới mới.</span></footer>
+    <script src="main.js"></script>
+</body>
+</html>
